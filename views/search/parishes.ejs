@@ -2,36 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>LIST</title>
+    <title>All Parishes</title>
     <link rel="stylesheet" href="/css/style.css">
     <script src="/send_url.js"></script>
   </head>
   <body>
     <header>
-      <a href="/" class="header-logo">LIST</a>
+      <a href="/" class="header-logo">Parishes in uganda</a>
     </header>
     <div class="container">
       <div class="container-header">
-        <h1>Shopping List</h1>
-        <a href="/new" class="new-button">+ Add item</a>
+        <h1>Parishes</h1>
+        <a href="/new" class="new-button">+ Add Parish</a>
       </div>
       <div class="index-table-wrapper">
         <div class="table-head">
           <span class="id-column">ID</span>
-          <span>Item</span>
+          <span>Parishes</span>
         </div>
         <ul class="table-body">
-          <% items.forEach((item) => { %>
+          <% parishes.forEach((parish) => { %>
             <li>
               <div class="item-data">
-                <span class="id-column"><%= item.id %></span>
-                <span class="name-column"><%= item.name %></span>
+                <span class="id-column"><%= parish.id %></span>
+                <span class="name-column"><%= parish.parish %></span>
+
               </div>
               <div class="item-menu">
-                <form action="/delete/<%= item.id %>" method="post">
+                <form action="/delete/<%= parish.id %>" method="post">
                   <input type="submit" value="Delete">
                 </form>
-                <a href="/edit/<%= item.id %>">Edit</a>
+                <a href="/edit/<%= parish.id %>">Edit</a>
               </div>
             </li>
           <% }) %>

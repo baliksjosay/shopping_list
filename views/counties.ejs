@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Uganda</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="header-logo">Counties</a>
+    </header>
+    <div class="container">
+      <div class="search-form-wrapper">
+        <form action="/counties" method="post">
+          <input type="text" placeholder="Search all counties" name="county">
+          <input type="submit" value="Search">
+        </form>
+      </div>
+      <div class="container-header">
+        <h1>Counties: <%= counties.length %> Result(s)</h1>
+        <a href="/new" class="new-button">+ Add County</a>
+      </div>
+      </div>
+      <div style=' justify-content: center;'>
+        <table class="tableStyles"  >
+          <tr style='background-color: #b7cadc; text-align:left; padding-left:10px; height: 44px;'>
+            <th style='padding-left:10px;'>ID</th>
+            <th style='padding-left:10px;'>COUNTY</th>
+            <th style='padding-left:10px;'>DISTRICT</th>
+            <th style='text-align:center;'>ACTION</th>
+
+          </tr>
+          <% counties.forEach((county) => { %>
+
+            <tr class="table-body" >
+              <td><a href="/view/counties/<%= county.id %>"><%= county.id %></a></td>
+              <td><a class='details' href="/view/counties/<%= county.id %>/subcounties"><%= county.county %></a></td>
+              <td ><a href="/view/districts/all"><%= county.district %></a></td>
+              <td ><a class='details' href="/view/counties/<%= county.id %>/subcounties">View all subcounties</a></td>
+
+            </tr>
+          <% }) %>
+        </table>
+        </div>
+  </body>
+</html>

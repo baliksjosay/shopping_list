@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Admin Regions</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="header-logo">Counties in uganda</a>
+    </header>
+    <div class="container">
+      <div class="container-header">
+        <h1>Counties</h1>
+        <a href="/new" class="new-button">+ Add County</a>
+      </div>
+      <div class="index-table-wrapper">
+        <div class="table-head">
+          <span class="id-column">ID</span>
+          <span>Counties</span>
+        </div>
+        <ul class="table-body">
+          <% counties.forEach((county) => { %>
+            <li>
+              <div class="item-data">
+                <span class="id-column"><%= county.districtId %></span>
+                <span class="name-column"><%= county.county %></span>
+
+              </div>
+              <div class="item-menu">
+                <!-- <form action="/delete/<%= county.id %>" method="post">
+                  <input type="submit" value="Delete">
+                </form> -->
+                <a href="/view/subcounties/<%= county.county%>">View Counties</a>
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

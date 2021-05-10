@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All Parishes</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="header-logo">Uganda</a>
+    </header>
+    <div class="container">
+      <div class="search-form-wrapper">
+        <form action="/parishes" method="post">
+          <input type="text" placeholder="Search all parishes" name="parish">
+          <input type="submit" value="Search">
+        </form>
+      </div>
+      <div class="container-header">
+        <h1>Parishes: <%= parishes.length %> Result(s)</h1>
+        <a href="/new" class="new-button">+ Add Parish</a>
+      </div>
+      </div>
+
+      <div style=' justify-content: center;'>
+        <table class="tableStyles"  >
+          <tr style='background-color: #b7cadc; text-align:left; padding-left:10px; height: 44px;'>
+            <th style='padding-left:10px;'>ID</th>
+            <th style='padding-left:10px;'>PARISH</th>
+            <th style='padding-left:10px;'>SUBCOUNTY</th>
+            <th style='padding-left:10px;'>COUNTY</th>
+            <th style='padding-left:10px;'>DISTRICT</th>
+            <th style='text-align:center;'>ACTION</th>
+
+          </tr>
+          <% parishes.forEach((parish) => { %>
+
+            <tr class="table-body" >
+              <td><a href="/view/parishes/<%= parish.id %>"></a><%= parish.id %></td>
+              <td><a class='details' href="/view/parishes/<%= parish.id %>/villages"><%= parish.parish %></a></td>
+              <td><a href="/view/subcounties/<%= parish.subcountyId %>/parishes"><%= parish.subcounty %></a></td>
+              <td><a href="/view/counties/<%= parish.countyId %>/subcounties"><%= parish.county %></a></td>
+              <td > <a href="/view/districts/all"><%= parish.district %></a></td>
+              <td > <a class='details' href="/view/parishes/<%= parish.id %>/villages">View all villages</a></td>
+
+            </tr>
+          <% }) %>
+        </table>
+        </div>
+  </body>
+</html>

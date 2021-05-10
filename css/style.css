@@ -8,10 +8,14 @@ html {
   font-family: 'Hiragino Sans', sans-serif;
   line-height: 1.7;
   letter-spacing: 1px;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-  margin: 0;
+  margin: 0 0 60 0;
+  /* margin-bottom: 60px; */
+
   background-color: #f6faff;
   color: #6c7686;
 }
@@ -102,6 +106,7 @@ input {
   background-color:  #58d2b2;
 }
 
+
 .index-button {
   cursor: pointer;
 }
@@ -138,15 +143,19 @@ header {
 
 /* container ================================ */
 .container {
-  width: 80%;
-  min-width: 360px;
-  max-width: 720px;
+  width: 100%;
+  /* min-width: 360px;
+  max-width: 80%; */
   margin: 0 auto;
   margin-top: 56px;
 }
-
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
 .container-header {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
@@ -196,6 +205,10 @@ header {
   line-height: 46px;
   color: #ffffff;
 }
+/* .full {
+  width: 100%;
+
+} */
 
 .id-column {
   width: 72px;
@@ -204,10 +217,14 @@ header {
 
 .table-body {
   background-color: #ffffff;
+  width: 100%;
+  font-size: 14px;
+  text-transform: capitalize;
+
 }
 
 .table-body li {
-  height: 35px;
+  height: 30px;
   border: 1px solid #f0f4f9;
   border-top: none;
   display: flex;
@@ -221,6 +238,7 @@ header {
 }
 
 .table-body .name-column {
+  /* width:25%; */
   font-size: 14px;
   font-weight: 500;
   color: #8491a5;
@@ -228,6 +246,7 @@ header {
 
 .item-data {
   display: flex;
+
 }
 
 .item-menu {
@@ -299,7 +318,7 @@ header {
   width: 120px;
   height: 45px;
   margin-top: 24px;
-  margin-left: 20px;
+  margin-left: auto;
   border-radius: 30px;
   font-size: 14px;
   background-color: #80bcff;
@@ -314,104 +333,22 @@ header {
   color: #80bcff;
   transition: all 0.3s ease;
 }
-
-
-/* search */
-.search-form-wrapper{
-  margin-left: auto;
-  margin-right: auto;
+#about {
+  padding-top: 48px;
 }
-.search-form-wrapper input[type="text"] {
-  width: 40%;
-  margin-left:20%;
-  height: 35px;
-  margin-top: 8px;
-  margin-bottom: 70px;
-  padding: 12px 16px;
-  background-color: #fcfcfd;
-  border: 2px solid #bac6d3;
-  border-radius: 10px;
-  color: #2b546a;
-  font-size: 14px;
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #507cd8;
 }
-
-.search-form-wrapper input[type="submit"] {
-  display: inline;
-  width: 120px;
-  height: 35px;
-  margin-top: 24px;
-  margin-bottom: 70px;
-  margin-left: auto;
-  border-radius: 30px;
-  font-size: 14px;
-  background-color: #fcfcfd;
-  color: #80bcff;
-  cursor: pointer;
-  outline: none;
-  border: 2px solid #80bcff;
+.footer p {
+  line-height: 60px;
+  color: white;
 }
-
-.search-form-wrapper input[type="submit"]:hover {
-  background-color: #80bcff;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-
-.search-form-wrapper input[type="text"]:focus {
-  color: #fff;
-  border: 2px solid #80bcff;
-  outline: none;
-  transition: all 0.3s ease;
-  color: #2b546a;
-  font-size: 16px;
-
-}
-.tableStyles{
-  width: 70%;
-   margin-left: auto; 
-   margin-right: auto;
-  
-}
-
-/* .tableStyles tr td a{
-  padding: 100%;
-} */
-
-.tableStyles tr td a:hover{
- color:#80bcff;
-}
-.tableStyles .details{
-  color:#80bcff;
- }
-.tableStyles td{
-  padding: 0 0 0 10px;
-  height: 42px;
-  /* border: 1px solid #f0f4f9; */
-  border-top: none;
-
-}
-
-
-/* table tr{
-  height: 42px;
-  border: 1px solid #f0f4f9;
-  border-top: none;
-} */
-.tableStyles tr:nth-child(even){
-  background-color: #f3f7fc;
-
-}
-
-
-.action-menu a {
-  font-size: 14px;
-  color: #80bcff;
-  text-align: center;
-  padding: 0px;
-
-}
-
-.action-menu :hover {
-  background-color: #80bcff;
-  color:#fff;
+.footer a {
+  color: #efb22e;
+  text-decoration: none;
 }

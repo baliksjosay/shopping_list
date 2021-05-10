@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Village Search Results</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style type="text">
+       
+    </style>
+
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <% include ./partials/nav %>
+    <header>
+      <a href="/" class="header-logo">Uganda</a>
+        <form action="/search" method="post" style="text-align: center;">
+          <input type="text" name="village" placeholder="Search"></input>
+          <input type="submit" value="post">
+        </form>
+    </header>
+    <div style=' justify-content: center;'>
+        <table class="tableStyles" style="width: 80%;  margin-left: auto; margin-right: auto;" >
+          <div class="container-header">
+            <h1>Village</h1>
+            <a href="/new" class="new-button">+ Add Village</a>
+          </div>
+          <tr style='background-color: #b7cadc;'>
+            <th>VILLAGE ID</th>
+            <th>VILLAGE</th>
+            <th>PARISH</th>
+            <th>SUBCOUNTY</th>
+            <th>COUNTY</th>
+            <th>DISTRICT</th>
+          </tr>
+          <% villages.forEach((village) => { %>
+
+            <tr class="table-body" >
+              <td><%= village.id %></td>
+              <td><%= village.village %></td>
+              <td><%= village.parish %></td>
+              <td><%= village.subcounty %></td>
+              <td><%= village.county %></td>
+              <td><%= village.district %></td>
+
+            </tr>
+          <% }) %>
+        </table>
+    </div>
+  </body>
+</html>
