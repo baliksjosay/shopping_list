@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node": "12.19.0"
+  },
   "scripts": {
     "eslint": "eslint ./",
     "start": "nodemon ./app.js"
