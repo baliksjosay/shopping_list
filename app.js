@@ -15,10 +15,10 @@ app.use(express.urlencoded({extended: false}));
 
 
 const connection = mysql.createConnection({
-  host:  'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'admin_regions'
+  host:  'un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user: 'ld3sqg36vg8w8aks',
+  password: 'hc6j1h4fdbec7y2b',
+  database: 'gn56li7qxuu81mxh'
 });
 
   // var corsOptions = {
