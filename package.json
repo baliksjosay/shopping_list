@@ -8,7 +8,7 @@
   },
   "scripts": {
     "eslint": "eslint ./",
-    "start": "nnode ./bin/www"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
