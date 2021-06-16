@@ -836,6 +836,6 @@ app.get('/api/villages/:id', (req, res) => {
 // mysql --host=us-us-cdbr-east-04.cleardb.com --user=b2894614195f24 --password=dc187cab --reconnect heroku_5174625613c53de
 
 // Start the server on port 3000
-app.listen(3000, '127.0.0.1');
+// app.listen(3000, '127.0.0.1');
 console.log('Node server running on port 3000');
 module.exports = app;
